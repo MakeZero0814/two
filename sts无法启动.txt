@@ -1,0 +1,51 @@
+﻿SpringSource Tool Suite (STS)无法启动问题:
+问题1：failed to load the jni shared library
+
+  
+  eclipse的版本与jre或者jdk版本不一致
+
+
+
+
+问题2：error could not open jvm.cfg
+
+
+
+
+D:\springsource\sts-2.6.1.SR1找到STS.ini这个文件，用任何文本编辑器打开。
+
+在此文件中添加以下内容：
+
+
+-vm
+
+C:\Program Files\Java\jdk1.6.0_12\bin\javaw.exe
+
+
+
+
+添加后的配置如下：
+
+
+-vm
+C:\Program Files (x86)\Java\jdk1.6.0_07\bin
+-startup
+plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.win32.win32.x86_1.1.200.v20150204-1316
+-product
+org.springsource.sts.ide
+--launcher.defaultAction
+openFile
+--launcher.XXMaxPermSize
+256M
+-vmargs
+-Dosgi.requiredJavaVersion=1.6
+-Xms40m
+-Xmx768m
+-XX:MaxPermSize=256m
+-Dorg.eclipse.swt.browser.IEVersion=10001
+--------------------- 
+ 
+来源：CSDN 
+原文：https://blog.csdn.net/wpx_20131212/article/details/45165561 

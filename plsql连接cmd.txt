@@ -1,0 +1,24 @@
+C:\app\Administrator\product\11.2.0\dbhome_1\bin;   Path环境配置
+
+
+在cmd中连接plsql:
+sqlplus  "/as  sysdba"
+
+
+alter user sys identified by orcl;  //更改orcl识别的用户系统
+
+
+
+ed进入编辑框
+ed框输入完代码，直接关闭(不加分号)； 再输入 / 即可运行。
+
+
+查看当前的所有数据库
+select * from v$database;
+select name from v$database;  //查看数据库名
+desc v$database; //查看数据库结构字段
+
+
+导入在C盘的a.sql文件(文件必须直接放在盘fu下)
+@C:/a.sql
+
